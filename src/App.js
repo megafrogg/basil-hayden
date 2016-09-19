@@ -24,8 +24,8 @@ class App extends Component {
       }));
 }
 
-  handleClick() {
-
+  handleClick(itemClickedOn) {
+    console.log(itemClickedOn);
   }
 
   render() {
@@ -44,7 +44,7 @@ class App extends Component {
 
 
         <h3>In stock at: </h3>
-        {this.state.inStock.length > 0 ? <InStockList stores={this.state.inStock} /> : 'no city loaded'}
+        {this.state.inStock.length > 0 ? <InStockList selectStore={this.handleClick} stores={this.state.inStock} /> : 'no city loaded'}
       </div>
     );
   }
