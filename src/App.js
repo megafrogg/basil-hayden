@@ -32,15 +32,23 @@ class App extends Component {
 
     return (
       <div className='jumbotron'>
-        <h1>{this.state.product.name}</h1>
-        <div className='media'>
-          <div className='media-left'>
-            <img className='media-object' src={this.state.product.image_thumb_url} alt={this.state.product.name} />
+        <div className='panel panel-default'>
+          <div className='panel-heading'>
+            <h2 className='panel-title'>{this.state.product.name}</h2>
           </div>
-          <div className='media-body'>
-            <p>{this.state.product.tasting_note}</p>
+          <div className='panel-body'>
+          <div className='media'>
+            <div className='media-left'>
+              <img className='media-object' src={this.state.product.image_thumb_url} alt={this.state.product.name} />
+            </div>
+            <div className='media-body'>
+              <p>{this.state.product.tasting_note}</p>
+            </div>
+          </div>
+
           </div>
         </div>
+
 
 
         <h3>In stock at: </h3>
