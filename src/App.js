@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import InStockList from './components/InStockList'
+import InStockList from './components/InStockList';
 
 
 
@@ -24,13 +24,25 @@ class App extends Component {
       }));
 }
 
+  handleClick() {
+
+  }
+
   render() {
-    
+
     return (
-      <div>
+      <div className='jumbotron'>
         <h1>{this.state.product.name}</h1>
-        <img src={this.state.product.image_thumb_url} alt={this.state.product.name} />
-        <p>{this.state.product.tasting_note}</p>
+        <div className='media'>
+          <div className='media-left'>
+            <img className='media-object' src={this.state.product.image_thumb_url} alt={this.state.product.name} />
+          </div>
+          <div className='media-body'>
+            <p>{this.state.product.tasting_note}</p>
+          </div>
+        </div>
+
+
         <h3>In stock at: </h3>
         {this.state.inStock.length > 0 ? <InStockList stores={this.state.inStock} /> : 'no city loaded'}
       </div>
